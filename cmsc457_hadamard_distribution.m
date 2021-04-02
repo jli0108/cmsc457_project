@@ -1,4 +1,4 @@
-t=100; % steps
+t=10; % steps
 probabilities = zeros(2*t + 1,1);
 for n = -t:2:t-2
     l = (t-n)/2;
