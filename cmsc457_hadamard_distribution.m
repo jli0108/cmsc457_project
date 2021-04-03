@@ -1,7 +1,7 @@
-t=10; % steps
+t=100; % steps
 probabilities = zeros(2*t + 1,1);
-for n = -t:2:t-2
-    l = (t-n)/2;
+for n = -t:2:t
+    l = (t+n)/2;
     res = 0;
     for k = 0:l-1
         if l-1 < 0 || l-1 < k
@@ -32,7 +32,7 @@ for n = -t:2:t-2
         res2 = res2 + a*b*(-1)^(l-k);
     end
     
-    probabilities(t+1-n) = (res * res + res2 * res2)/2^t;
+    probabilities(t+1+n) = (res * res + res2 * res2)/2^t;
 end
 probabilities(1) = 1/2^t;
 
